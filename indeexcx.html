@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+   <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+   <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+   <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="grid-container">
+      <aside class="sidebar">
+         <div class="sidebar__top-header">
+            <img src="./assets/svg/logo.svg" alt="logo">
+            <button class="top-header__btn"><img src="./assets/svg/arrow.svg" alt="arrow"></button>
+         </div>
+         <div class="sidebar__input">
+            <input type="text" class="form-control " placeholder="" aria-label="Username"
+               aria-describedby="basic-addon1">
+            <img class="search-icon" src="./assets/svg/search.svg" alt="">
+            <p class="input-text">Search for...</p>
+         </div>
+         <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+               <h2 class="accordion-header">
+                  <button class="accordion-button d-flex gap-2" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                     <i class="bi bi-house-fill"></i>Dashboard
+                  </button>
+               </h2>
+               <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <ul class="menus">
+                     <li class="menus__menu"><a class="link" href="#">All pages</a></li>
+                     <li class="menus__menu"><a class="link" href="#">Reports</a></li>
+                     <li class="menus__menu"><a class="link" href="#">Products</a></li>
+                     <li class="menus__menu"><a class="link" href="#">Task</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header">
+                  <button class="accordion-button collapsed d-flex gap-2" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                     <i class="bi bi-star-fill"></i>Features
+                  </button>
+               </h2>
+               <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header">
+                  <button class="accordion-button collapsed d-flex gap-2" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                     <i class="bi bi-person-fill"></i>Users
+                  </button>
+               </h2>
+               <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header">
+                  <button class="accordion-button collapsed d-flex gap-2" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                     <i class="bi bi-currency-dollar"></i>Pricing
+                  </button>
+               </h2>
+               <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header">
+                  <button class="accordion-button collapsed d-flex gap-2" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                     <img src="./assets/svg/puzzle.svg" alt="">Integrations
+                  </button>
+               </h2>
+               <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+
+               </div>
+            </div>
+         </div>
+         <div class="sidebar__line my-4"></div>
+         <section class="popover-1">
+            <div hidden>
+               <div data-name="popover-content">
+                  <div class="popover-content__link"><a href="#">Settings</a></div>
+                  <div class="popover-content__link"><a href="#">Notifications</a></div>
+                  <div class="popover-content__link"><a href="#">Theme</a></div>
+               </div>
+            </div>
+            <a class="" id="example" tabindex="0" role="button" data-bs-toggle="popover">
+               <button class="settings-btn"><i class="bi bi-gear-fill"></i>Settings</button>
+            </a>
+         </section>
+         <section class="popover-1">
+            <div hidden>
+               <div data-name="popover-content-2">
+                  <div class="popover-content__link"><a href="#">Settings</a></div>
+                  <div class="popover-content__link"><a href="#">Notifications</a></div>
+                  <div class="popover-content__link"><a href="#">Theme</a></div>
+               </div>
+            </div>
+            <a class="" id="example-2" tabindex="0" role="button" data-bs-toggle="popover">
+               <button class="settings-btn"><img src="./assets/svg/webflow.svg" alt="">Template pages</button>
+            </a>
+         </section>
+         <div class="sidebar__profile d-flex align-items-center gap-2 ">
+            <img src="./assets/png/profile.png" alt="">
+            <div>
+               <p class="m-0">John Carter</p>
+               <div class="accordion-item">
+                  <h2 class="accordion-header">
+                     <button class="accordion-button collapsed d-flex gap-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Account settings
+                     </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+
+                  </div>
+               </div>
+            </div>
+         </div>
+         <button class="sidebar__btn">Get template<i class="bi bi-arrow-right"></i></button>
+      </aside>
+      <main class="main">
+         <div class="main-top">
+            <div class="main-top__title">
+               <p class="title__text-1">Welcome back, John</p>
+               <p class="title__text-2">Measure your advertising ROI and report website traffic.</p>
+            </div>
+            <div class="title__buttons">
+               <button class="buttons__btn-1">Export data <i class="bi bi-arrow-down"></i></button>
+               <button class="buttons__btn-2">Create report</button>
+            </div>
+         </div>
+         <div class="main-cards">
+            <div class="main-cards__card">
+               <div class="card__title">
+                  <p><i class="bi bi-eye-fill"></i> Pageviews</p>
+                  <i class="bi bi-three-dots"></i>
+               </div>
+               <div class="card__content">
+                  <p>50.8K</p>
+                  <div class="content__green-box">
+                     <p>28.4%<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor"
+                           class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                        </svg></p>
+                  </div>
+               </div>
+            </div>
+            <div class="main-cards__card">
+               <div class="card__title">
+                  <p><i class="bi bi-person-fill"></i> Monthly users</p>
+                  <i class="bi bi-three-dots"></i>
+               </div>
+               <div class="card__content">
+                  <p>23.6K</p>
+                  <div class="content__green-box red-content">
+                     <p>12.6%<i class="bi bi-arrow-down-right"></i></p>
+                  </div>
+               </div>
+            </div>
+            <div class="main-cards__card">
+               <div class="card__title">
+                  <p><i class="bi bi-plus-circle-fill"></i> New sign ups</p>
+                  <i class="bi bi-three-dots"></i>
+               </div>
+               <div class="card__content">
+                  <p>756</p>
+                  <div class="content__green-box">
+                     <p>3.1%<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor"
+                           class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                        </svg></p>
+                  </div>
+               </div>
+            </div>
+            <div class="main-cards__card">
+               <div class="card__title">
+                  <p><i class="bi bi-star-fill"></i> Subscriptions</p>
+                  <i class="bi bi-three-dots"></i>
+               </div>
+               <div class="card__content">
+                  <p>2.3K</p>
+                  <div class="content__green-box">
+                     <p>11.3%<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor"
+                           class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd"
+                              d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                        </svg></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="statistics">
+            <div class="statistics__stat-1">
+               <div class="stat-1__top-content d-flex justify-content-between align-items-center">
+                  <div class="top-content__info">
+                     <p class="info-1">Total revenue</p>
+                     <div class="d-flex align-items-center gap-2">
+                        <p class="info-2">$240.8K</p>
+                        <div class="content__green-box">
+                           <p>24.6%
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor"
+                                 class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd"
+                                    d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                              </svg>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="top-content__info-2 d-flex gap-3">
+                     <div class="d-flex align-items-center gap-2">
+                        <p>
+                        <div class="circle"></div> Revenue</p>
+                     </div>
+                     <div class="d-flex align-items-center gap-2">
+                        <p>
+                        <div class="circle blue"></div> Expenses</p>
+                     </div>
+                     <input class="date" type="date">
+                  </div>
+               </div>
+               <canvas id="myChart" height="500"></canvas>
+            </div>
+            <div class="statistics__stat-2">
+               <div class="stat-2__s1">
+                  <div class="top-content__info">
+                     <p class="info-1"><i class="bi bi-graph-up-arrow"></i> Total profit</p>
+                     <div class="d-flex align-items-center gap-2">
+                        <p class="info-2">$144.6K</p>
+                        <div class="content__green-box">
+                           <p>28.5%
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor"
+                                 class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd"
+                                    d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                              </svg>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <canvas id="myChart2" height="170"></canvas>
+                  <div class="d-flex justify-content-between mt-3">
+                     <p class="s1__time">Last 12 months</p>
+                     <a class="s1__view" href="#">View report</a>
+                  </div>
+               </div>
+               <div class="stat-2__s2">
+                  <div class="top-content__info">
+                     <p class="info-1"><i class="bi bi-stopwatch-fill"></i> Total sessions</p>
+                     <div class="d-flex align-items-center gap-2">
+                        <p class="info-2">400</p>
+                        <div class="content__green-box">
+                           <p>16.8%
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor"
+                                 class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd"
+                                    d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                              </svg>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <canvas id="myChart3" height="170"></canvas>
+                  <div class="d-flex justify-content-between mt-3">
+                     <div class="d-flex gap-2">
+                        <div class="content__green-box">
+                           <p><i class="bi bi-dot"></i>
+                              Live</p>
+                        </div>
+                        <p class="s1__time">10k visitors</p>
+                     </div>
+                     <a class="s1__view" href="#">View report</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="main-middle">
+            <div class="main-top__title">
+               <p class="title__text-1">Reports overview</p>
+               <div class="middle__date">
+                  <div><i class="bi bi-calendar2-fill"></i> Select date </div>
+                  <i class="bi bi-chevron-down"></i>
+               </div>
+            </div>
+            <div class="title__buttons title__buttons-2">
+               <button class="buttons__btn-1">Export data <i class="bi bi-arrow-down"></i></button>
+               <button class="buttons__btn-2">Create report</button>
+            </div>
+         </div>
+         <div class="main-bottom">
+            <div class="bottom__start">
+               <div class="bottom-start__block-1">
+                  <div class="users-device">
+                     <p>23,648</p>
+                     <p>Users by device</p>
+                  </div>
+                  <canvas id="myChart4"></canvas>
+                  <ul class="d-flex user-device-list">
+                     <li>
+                        <div>
+                           <p>
+                           <div class="circle"></div>Desktop users</p>
+                        </div><span>15,624</span>
+                     </li>
+                     <li>
+                        <div>
+                           <p>
+                           <div class="circle gray"></div>Phone app users</p>
+                        </div><span>5,546</span>
+                     </li>
+                     <li>
+                        <div>
+                           <p>
+                           <div class="circle blue"></div>Laptop users</p>
+                        </div><span>2,478</span>
+                     </li>
+                  </ul>
+               </div>
+               <div class="bottom-start__block-2">
+                  <div class="block-2__top">
+                     <p>Recent orders</p>
+                     <div class="middle__date">
+                        <div><i class="bi bi-calendar2-fill"></i> Jan 2024</div>
+                        <i class="bi bi-chevron-down d-block mx-2"></i>
+                     </div>
+                  </div>
+                  <table>
+                     <thead>
+                        <tr>
+                           <th><i class="bi bi-dash-square-fill purp"></i> Order</th>
+                           <th><i class="bi bi-calendar2-fill"></i> Date</th>
+                           <th><i class="bi bi-check-square-fill"></i> Status</th>
+                           <th>Total</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="paid-bg">
+                           <td><i class="bi bi-check-square-fill purp"></i> #1532</td>
+                           <td>Dec 30, 10:06 AM</td>
+                           <td>
+                              <div class="content__green-box paid">
+                                 <p><i class="bi bi-dot"></i> Paid</p>
+                              </div>
+                           </td>
+                           <td>$ 329.40</td>
+                        </tr>
+                        <tr>
+                           <td><i class="bi bi-square"></i> #1531</td>
+                           <td>Dec 29, 2:59 AM</td>
+                           <td>
+                              <div class="pending">
+                                 <p><i class="bi bi-dot"></i> Pending</p>
+                              </div>
+                           </td>
+                           <td>$ 117.24</td>
+                        </tr>
+                        <tr>
+                           <td><i class="bi bi-square"></i> #1530</td>
+                           <td>Dec 29, 12:54 AM</td>
+                           <td>
+                              <div class="pending">
+                                 <p><i class="bi bi-dot"></i> Pending</p>
+                              </div>
+                           </td>
+                           <td>$ 52.16</td>
+                        </tr>
+                        <tr class="paid-bg">
+                           <td><i class="bi bi-check-square-fill purp"></i> #1529</td>
+                           <td>Dec 28, 2:32 PM</td>
+                           <td>
+                              <div class="content__green-box paid">
+                                 <p><i class="bi bi-dot"></i> Paid</p>
+                              </div>
+                           </td>
+                           <td>$ 350.52</td>
+                        </tr>
+                        <tr>
+                           <td><i class="bi bi-square"></i> #1528</td>
+                           <td>Dec 27, 2:20 PM</td>
+                           <td>
+                              <div class="pending">
+                                 <p><i class="bi bi-dot"></i> Pending</p>
+                              </div>
+                           </td>
+                           <td>$ 246.78</td>
+                        </tr>
+                        <tr class="paid-bg paid-br">
+                           <td><i class="bi bi-check-square-fill purp"></i> #1527</td>
+                           <td>Dec 26, 9:48 AM</td>
+                           <td>
+                              <div class="content__green-box paid">
+                                 <p><i class="bi bi-dot"></i> Paid</p>
+                              </div>
+                           </td>
+                           <td>$ 64.00</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="bottom-block-3">
+               <div class="bottom__map-content">
+                  <p>Users by country</p>
+                  <div class="map-content__title">
+                     <div class="d-flex align-items-center gap-2">
+                        <p class="users">12.4 K</p>
+                        <div class="content__green-box">
+                           <p>16.8%
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor"
+                                 class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd"
+                                    d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                              </svg>
+                           </p>
+                        </div>
+                     </div>
+                     <button class="buttons__btn-1">Export <i class="bi bi-arrow-down"></i></button>
+                  </div>
+                  <div class="map-content__info">
+                     <div>
+                        <p>United states</p>
+                        <div class="line line-purple"></div>
+                     </div>
+                     <p>30%</p>
+                  </div>
+                  <div class="map-content__info">
+                     <div>
+                        <p>United Kingdom</p>
+                        <div class="line line-gray"></div>
+                     </div>
+                     <p>20%</p>
+                  </div>
+                  <div class="map-content__info">
+                     <div>
+                        <p>Canada</p>
+                        <div class="line line-blue"></div>
+                     </div>
+                     <p>20%</p>
+                  </div>
+                  <div class="map-content__info">
+                     <div>
+                        <p>Australia</p>
+                        <div class="line line-ocean"></div>
+                     </div>
+                     <p>15%</p>
+                  </div>
+                  <div class="map-content__info">
+                     <div>
+                        <p>Spain</p>
+                        <div class="line line-white"></div>
+                     </div>
+                     <p>15%</p>
+                  </div>
+               </div>
+               <div id="chartdiv"></div>
+            </div>
+         </div>
+   </div>
+   </main>
+   </div>
+   <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+         var exampleEl = document.getElementById('example');
+         var popover = new bootstrap.Popover(exampleEl, {
+            html: true,
+            content: document.querySelector('[data-name="popover-content"]'),
+         });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+         var exampleEl = document.getElementById('example-2');
+         var popover = new bootstrap.Popover(exampleEl, {
+            html: true,
+            content: document.querySelector('[data-name="popover-content-2"]'),
+         });
+      });
+
+      const ctx = document.getElementById('myChart');
+      const ctx2 = document.getElementById('myChart2');
+      const ctx3 = document.getElementById('myChart3');
+      const ctx4 = document.getElementById('myChart4');
+
+      new Chart(ctx, {
+         type: 'line',
+         data: {
+            labels: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+               label: '# of Votes',
+               data: [30, 40, 25, 20, 30, 60, 50, 60, 125, 160, 100, 50, 70],
+               borderWidth: 2,
+               borderColor: '#00C2FF',
+               backgroundColor: '#00c3ff10',
+               fill: true,
+               tension: 0.4,
+               pointRadius: 0,
+
+            },
+            {
+               label: '# of Votes',
+               data: [0, 5, 10, 25, 60, 80, 90, 90, 100, 130, 165, 200, 210],
+               borderWidth: 2,
+               borderColor: '#CB3CFF',
+               backgroundColor: '#00c3ff10',
+               fill: true,
+               tension: 0.3,
+               pointRadius: 0,
+            },
+            ]
+         },
+         options: {
+
+            scales: {
+               y: {
+                  suggestedMin: 0,
+                  suggestedMax: 250
+               }
+            }
+         }
+      });
+
+
+      new Chart(ctx2, {
+         type: 'bar',
+         data: {
+            labels: ['12 AM', '', '', '', '8 AM', '', '', '', '4 PM', '', '', '', '11PM'],
+            datasets: [
+               {
+                  label: '# of Votes',
+                  data: [140, 140, 130, 120, 135, 150, 140, 120, 140, 100, 115, 100, 115],
+                  borderWidth: 2,
+                  borderColor: '#CB3CFF',
+                  backgroundColor: '#CB3CFF',
+                  fill: true,
+                  tension: 0.3,
+                  pointRadius: 0,
+               },
+               {
+                  label: '# of Votes',
+                  data: [120, 90, 40, 140, 100, 110, 80, 95, 105, 130, 120, 125, 130],
+                  borderWidth: 2,
+                  borderColor: '#00C2FF',
+                  backgroundColor: '#00C2FF',
+                  fill: true,
+                  tension: 0.4,
+                  pointRadius: 0,
+
+               },
+            ]
+         },
+         options: {
+            scales: {
+               y: {
+                  suggestedMin: 0,
+                  suggestedMax: 200
+               }
+            }
+         }
+      }
+      );
+
+      new Chart(ctx3, {
+         type: 'line',
+         data: {
+            labels: ['12 AM', '', '', '', '8 AM', '', '', '', '4 PM', '', '', '', '11PM'],
+            datasets: [
+               {
+                  label: 'Session',
+                  data: [0, 20, 100, 30, 120, 90, 50, 100, 450, 30, 30, 100, 40],
+                  borderWidth: 2,
+                  borderColor: '#CB3CFF',
+                  backgroundColor: '#CB3CFF',
+                  pointRadius: 0,
+               },
+            ]
+         },
+         options: {
+            scales: {
+               y: {
+                  suggestedMin: 0,
+                  suggestedMax: 500
+               }
+            }
+         }
+      }
+      );
+
+      new Chart(ctx4, {
+         type: 'doughnut',
+         data: {
+            datasets: [
+               {
+                  label: 'Device',
+                  data: [62, 26, 12],
+                  borderWidth: 0,
+                  backgroundColor: ['#CB3CFF',
+                     '#0038FF',
+                     '#00C2FF'],
+                  cutout: 170,
+                  rotation: 270,
+               },
+            ]
+         },
+         options: {
+            circumference: 170,
+         }
+      });
+
+   </script>
+   <script>
+      am5.ready(function () {
+
+         var data = [
+            {
+               id: "US",
+               name: "United States",
+               value: 40
+            }, {
+               id: "GB",
+               name: "United Kingdom",
+               value: 40
+            }, {
+               id: "CN",
+               name: "China",
+               value: 40
+            }, {
+               id: "IN",
+               name: "India",
+               value: 40
+            }, {
+               id: "AU",
+               name: "Australia",
+               value: 40
+            }, {
+               id: "CA",
+               name: "Canada",
+               value: 40
+            }, {
+               id: "BR",
+               name: "Brasil",
+               value: 40
+            }, {
+               id: "ZA",
+               name: "South Africa",
+               value: 40
+            }, {
+               id: "UZ",
+               name: "Uzbekistan",
+               value: 40
+            }
+         ];
+
+         var root = am5.Root.new("chartdiv");
+         root.setThemes([am5themes_Animated.new(root)]);
+
+         var chart = root.container.children.push(am5map.MapChart.new(root, {}));
+
+         var polygonSeries = chart.series.push(
+            am5map.MapPolygonSeries.new(root, {
+               geoJSON: am5geodata_worldLow,
+               exclude: ["AQ"]
+            })
+         );
+
+         var bubbleSeries = chart.series.push(
+            am5map.MapPointSeries.new(root, {
+               valueField: "value",
+               calculateAggregates: true,
+               polygonIdField: "id"
+            })
+         );
+
+         var circleTemplate = am5.Template.new({});
+
+         bubbleSeries.bullets.push(function (root, series, dataItem) {
+            var container = am5.Container.new(root, {});
+
+            var circle = container.children.push(
+               am5.Circle.new(root, {
+                  radius: 20,
+                  fillOpacity: 0.7,
+                  fill: am5.color(0xff0000),
+                  cursorOverStyle: "pointer",
+                  tooltipText: `{name}: [bold]{value}[/]`
+               }, circleTemplate)
+            );
+
+            var countryLabel = container.children.push(
+               am5.Label.new(root, {
+                  text: "{name}",
+                  paddingLeft: 5,
+                  populateText: true,
+                  fontWeight: "bold",
+                  fontSize: 10,
+                  centerY: am5.p50
+               })
+            );
+
+            circle.on("radius", function (radius) {
+               countryLabel.set("x", radius);
+            })
+
+            return am5.Bullet.new(root, {
+               sprite: container,
+               dynamic: true
+            });
+         });
+
+         bubbleSeries.bullets.push(function (root, series, dataItem) {
+            return am5.Bullet.new(root, {
+               sprite: am5.Label.new(root, {
+                  text: "{value.formatNumber('#.')}",
+                  fill: am5.color(0xffffff),
+                  populateText: true,
+                  centerX: am5.p50,
+                  centerY: am5.p50,
+                  textAlign: "center"
+               }),
+               dynamic: true
+            });
+         });
+
+
+
+         // minValue and maxValue must be set for the animations to work
+         bubbleSeries.set("heatRules", [
+            {
+               target: circleTemplate,
+               dataField: "value",
+               min: 10,
+               max: 20,
+               minValue: 0,
+               maxValue: 50,
+               key: "radius"
+            }
+         ]);
+
+         bubbleSeries.data.setAll(data);
+
+         updateData();
+         setInterval(function () {
+            updateData();
+         }, 2000)
+
+         function updateData() {
+            for (var i = 0; i < bubbleSeries.dataItems.length; i++) {
+               bubbleSeries.data.setIndex(i, { value: Math.round(Math.random() * 100), id: data[i].id, name: data[i].name })
+            }
+         }
+
+
+      }); // end am5.ready()
+   </script>
+</body>
+
+</html>
